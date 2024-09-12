@@ -42,7 +42,7 @@ SELECT name,department,salary FROM employees
 ORDER BY salary DESC
 LIMIT 3;
 
--- Modify Angela's salary from 700,000 t0 70,000
+-- Modify Angela's salary from 700,000 to 70,000
 UPDATE employees
 SET salary = 70000
 WHERE name = 'Angela Wanjiku' AND id=3;
