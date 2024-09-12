@@ -24,3 +24,38 @@ modify email varchar (300);
 
 alter table student
 drop last_name;
+
+-- select multiple columns
+SELECT first_name,age FROM student;
+
+-- filter rows using WHERE clause
+SELECT first_name,age FROM student WHERE age>20;
+
+-- filter row based on multiple conditions
+SELECT first_name,email,stud_id
+FROM student
+WHERE age>18
+AND stud_id>1;
+
+SELECT * FROM student ORDER BY age ASC;
+
+-- order by and limit
+SELECT * FROM student
+ORDER BY age DESC
+LIMIT 2;
+
+-- sort my data with email and age
+SELECT first_name,email,age FROM student 
+GROUP BY email 
+ORDER BY age ASC;
+
+-- using DISTINCT to get unique values
+SELECT DISTINCT email FROM student;
+-- email address of students older than 18 ordered in alphabetical order
+SELECT DISTINCT email from student
+WHERE age > 20
+ORDER BY email ASC;
+
+-- logical operators AND OR NOT
+-- AND all conditions must be true
+-- OR any one of the conditions must be true
