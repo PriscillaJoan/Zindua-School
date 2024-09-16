@@ -1,7 +1,7 @@
--- Use the village schema
+-- Use village schema
 USE village;
 
--- Create the District_summary view
+-- Create District_summary view
 CREATE  VIEW District_summary AS
 WITH beneficiary_totals AS (
     SELECT 
@@ -34,14 +34,14 @@ SELECT
 FROM beneficiary_totals tb
 JOIN district_population dp ON tb.district_name = dp.district_name AND tb.region_name = dp.region_name;
 
--- Display the results
+-- Display results
 SELECT * FROM District_summary;
 
 -- PARTNER SUMMARY
 USE village;
 
--- Create the Partner_summary view
-CREATE OR REPLACE VIEW Partner_summary AS
+-- Create Partner_summary view
+CREATE VIEW Partner_summary AS
 WITH partner_reach AS (
     SELECT DISTINCT
         b.partner,
@@ -59,5 +59,5 @@ FROM partner_reach
 GROUP BY partner
 ORDER BY partner;
 
--- Display the results
+-- Display results
 SELECT * FROM Partner_summary;
